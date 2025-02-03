@@ -12,20 +12,28 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
-//#include <dt-bindings/zmk/mouse.h>
-
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <100>;
             retro-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_gaming {
+            timeout-ms = <50>;
+            key-positions = <1 5 6 10>;    // Q, T, Y, P keys
+            bindings = <&to 4>;
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -44,11 +52,6 @@
                 };
 
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |     |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
-// |     | SHFT| ALT | GUI | CTRL|     |   | LFT | DWN |  UP | RGT | SHFT|     |
-// |     |BTCLR| BT1 | BT2 | BT3 | BT4 |   |     |     |     |     |  '  |     |
-//                   |     | SPC |   | ENT | L3  |
                         bindings = <
    &none     &kp N1     &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &none
    &none     &kp LSHFT  &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT &none
@@ -58,11 +61,6 @@
                 };
 
                 raise_layer {
-// -----------------------------------------------------------------------------------------
-// |     | TAB |  @  |  #  |  $  |  %  |   |  ^  |  `  |  ;  |  '  | BSPC|     |
-// |     | TAB | ALT | GUI | CTRL|     |   |  -  |  =  |  [  |  ]  | SHFT|     |
-// |     |     |     |     |     |     |   |  _  |  +  |  {  |  }  |  \  |     |
-//                   | L3  | SPC |   | ENT |     |
                         bindings = <
    &none     &kp TAB   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET &kp GRAVE &kp SEMI  &kp SQT   &kp BSPC  &none
    &none     &kp TAB   &kp LALT  &kp LGUI  &kp LCTRL &none        &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp RSHFT &none
@@ -72,16 +70,25 @@
                 };
 
                 adjust_layer {
-// -----------------------------------------------------------------------------------------
-// |     |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 |     |
-// |     |     |     | MB1 | MB2 | MB3 |   |     | MLS | MDN | MUP | MRS |     |
-// |     |     |     |     |     |     |   |     | WHL | WHD | WHU | WHR |     |
-//                   |     | SPC |   | ENT |     |
                         bindings = <
    &none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &none
    &none     &none     &none     &mkp MB1  &mkp MB2  &mkp MB3     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
    &none     &none     &none     &none     &none     &none        &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
                        &none     &trans    &kp SPACE               &kp RET   &trans    &none
+                        >;
+                };
+
+                gaming_layer {
+// -----------------------------------------------------------------------------------------
+// |     |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |     |
+//                   |TO(0)| SPC |   | ENT | BSPC |
+                        bindings = <
+   &none     &kp Q     &kp W      &kp E       &kp R       &kp T         &kp Y    &kp U       &kp I       &kp O      &kp P     &none
+   &none     &hm LSHFT A &kp S      &kp D       &kp F       &kp G         &kp H    &kp J       &kp K       &kp L      &kp SEMI  &none
+   &none     &kp Z     &kp X      &kp C       &kp V       &kp B         &kp N    &kp M       &kp COMMA   &kp DOT    &kp FSLH  &none
+                       &none      &to 0        &kp SPACE                 &kp RET  &kp BSPC    &none
                         >;
                 };
         };
