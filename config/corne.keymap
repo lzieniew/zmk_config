@@ -18,12 +18,12 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            //hold-trigger-key-positions = <0>;    // Disable positional check
+            hold-trigger-key-positions = <0>;    // Disable positional check
             hold-trigger-on-release;            // Check key release
             global-quick-tap;
             quick-tap-ms = <200>;
             retro-tap;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
     };
@@ -36,7 +36,7 @@
             quick-tap-ms = <200>;
             global-quick-tap;
             retro-tap;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
 
