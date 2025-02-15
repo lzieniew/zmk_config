@@ -23,7 +23,7 @@
             global-quick-tap;
             quick-tap-ms = <200>;
             retro-tap;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
