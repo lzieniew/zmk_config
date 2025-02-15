@@ -17,26 +17,26 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            require-prior-idle-ms = <0>;
-            hold-trigger-on-release;            // Check key release
-            global-quick-tap;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <280>;
+            //hold-trigger-key-positions = <0>;    // Disable positional check
+            //hold-trigger-on-release;            // Check key release
+            // global-quick-tap;
+            quick-tap-ms = <175>;
             retro-tap;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
     };
         custom_lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            require-prior-idle-ms = <0>;
-            hold-trigger-on-release;
-            quick-tap-ms = <200>;
-            global-quick-tap;
+            tapping-term-ms = <280>;
+            //hold-trigger-key-positions = <0>;
+            //hold-trigger-on-release;
+            quick-tap-ms = <175>;
+            //global-quick-tap;
             retro-tap;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
 
@@ -88,7 +88,7 @@
                         bindings = <
    &none     &kp F1    &kp F2    &kp F3    &kp F4    &kp F5       &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &none
    &none     &none     &none     &mkp MB1  &mkp MB2  &mkp MB3     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none &none
-   &none     &none     &none     &none     &none     &none        &msc SCRL_UP &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
+   &none     &none     &none     &none     &none     &none        &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none &none
                        &none     &trans    &kp SPACE               &kp RET   &trans    &none
                         >;
                 };
