@@ -22,7 +22,7 @@
             //hold-trigger-on-release;            // Check key release
             // global-quick-tap;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <1>
+            require-prior-idle-ms = <1>;
             retro-tap;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -35,7 +35,7 @@
             //hold-trigger-key-positions = <0>;
             //hold-trigger-on-release;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <1>
+            require-prior-idle-ms = <1>;
             //global-quick-tap;
             retro-tap;
             flavor = "balanced";
