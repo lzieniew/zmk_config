@@ -18,8 +18,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            //hold-trigger-key-positions = <0>;    // Disable positional check
-            hold-trigger-on-release;            // Check key release
+            hold-trigger-key-positions = <0>;    // Disable positional check
+            //hold-trigger-on-release;            // Check key release
             global-quick-tap;
             quick-tap-ms = <200>;
             retro-tap;
@@ -31,8 +31,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            //hold-trigger-key-positions = <0>;
-            hold-trigger-on-release;
+            hold-trigger-key-positions = <0>;
+            //hold-trigger-on-release;
             quick-tap-ms = <200>;
             global-quick-tap;
             retro-tap;
