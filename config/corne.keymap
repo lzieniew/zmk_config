@@ -25,6 +25,16 @@
             bindings = <&kp>, <&kp>;
         };
     };
+        custom_lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <1>;
+            retro-tap;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        };
 
     combos {
         compatible = "zmk,combos";
@@ -48,7 +58,7 @@
    &none     &kp Q       &kp W      &kp E       &kp R       &kp T         &kp Y    &kp U       &kp I       &kp O      &kp P     &none
    &none     &hm LSHFT A &hm RALT S &hm LGUI D  &hm LCTRL F &kp G         &kp H    &hm RCTRL J &hm RGUI K  &hm RALT L &hm RSHFT SEMI &none
    &none     &kp Z       &kp X      &kp C       &kp V       &kp B         &kp N    &kp M       &kp COMMA   &kp DOT    &kp FSLH  &none
-                         &none      &hm 1 CAPS   &kp SPACE                 &kp RET  &hm 2 BSPC  &none
+                         &none      &custom_lt 1 CAPS   &kp SPACE                 &kp RET  &custom_lt 2 BSPC  &none
                         >;
                 };
 
@@ -57,7 +67,7 @@
    &none     &kp N1     &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &none
    &none     &kp LSHFT  &kp LALT      &kp LGUI      &kp LCTRL     &none           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT &none
    &none     &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &none     &none     &none     &none     &kp SQT   &none
-                        &none         &trans         &kp SPACE                     &kp RET   &hm 3 BSPC &none
+                        &none         &trans         &kp SPACE                     &kp RET   &custom_lt 3 BSPC &none
                         >;
                 };
 
@@ -66,7 +76,7 @@
    &none     &kp TAB   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET &kp GRAVE &kp SEMI  &kp SQT   &kp BSPC  &none
    &none     &kp TAB   &kp LALT  &kp LGUI  &kp LCTRL &none        &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT  &kp RSHFT &none
    &none     &none     &none     &none     &none     &none        &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC  &kp BSLH  &none
-                       &none     &hm 3 CAPS &kp SPACE              &kp RET   &trans    &none
+                       &none     &custom_lt 3 CAPS &kp SPACE              &kp RET   &trans    &none
                         >;
                 };
 
