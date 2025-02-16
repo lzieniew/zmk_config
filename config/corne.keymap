@@ -24,7 +24,6 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-    };
         custom_lt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -35,6 +34,7 @@
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
+    };
 
     combos {
         compatible = "zmk,combos";
